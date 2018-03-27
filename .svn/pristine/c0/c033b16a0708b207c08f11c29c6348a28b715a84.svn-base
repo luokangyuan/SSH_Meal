@@ -1,0 +1,9 @@
+package com.luo.biz;
+
+import java.util.List;
+
+public interface OrdersBiz {
+	//根据用户id获取指定用户的订单
+	public List getOrdersByUserId(int userId);
+
+}

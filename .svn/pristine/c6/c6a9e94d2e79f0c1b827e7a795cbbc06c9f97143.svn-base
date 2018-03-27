@@ -1,0 +1,233 @@
+@charset "utf-8";
+/* CSS Document */
+
+ 
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; z-index:20 }
+
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+
+      h3 { color: #666; }
+     /*  ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      } */
+      .luo{ display: inline;
+        margin: 10px 50px 10px 0px;}
+        .nav{list-style: none; padding: 25px 0; }
+       input[type=text],
+      input[type=password] {
+        font-size: 13px;
+        min-height: 32px;
+        margin: 0;
+        padding: 7px 8px;
+        outline: none;
+        color: #333;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-position: right center;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        transition: all 0.15s ease-in;
+        -webkit-transition: all 0.15s ease-in 0;
+        vertical-align: middle;
+      }
+      .button {
+        position: relative;
+        display: inline-block;
+        margin: 0;
+        padding: 8px 15px;
+        font-size: 13px;
+        font-weight: bold;
+        color: #333;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+        white-space: nowrap;
+        background-color: #eaeaea;
+        background-image: -moz-linear-gradient(#fafafa, #eaeaea);
+        background-image: -webkit-linear-gradient(#fafafa, #eaeaea);
+        background-image: linear-gradient(#fafafa, #eaeaea);
+        background-repeat: repeat-x;
+        border-radius: 3px;
+        border: 1px solid #ddd;
+        border-bottom-color: #c5c5c5;
+        box-shadow: 0 1px 3px rgba(0,0,0,.05);
+        vertical-align: middle;
+        cursor: pointer;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-appearance: none;
+      }
+      .button:hover,
+      .button:active {
+        background-position: 0 -15px;
+        border-color: #ccc #ccc #b5b5b5;
+      } 
+      .button:active {
+        background-color: #dadada;
+        border-color: #b5b5b5;
+        background-image: none;
+        box-shadow: inset 0 3px 5px rgba(0,0,0,.15);
+      }
+      .button:focus,
+      input[type=text]:focus,
+      input[type=password]:focus {
+        outline: none;
+        border-color: #51a7e8;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,.075), 0 0 5px rgba(81,167,232,.5);
+      }
+     
+      label[for=search] {
+        display: block;
+        text-align: left;
+      }
+      #search label {
+        font-weight: 200;
+        padding: 5px 0;
+      }
+      #search input[type=text] {
+        font-size: 18px;
+        width: 340px;
+		position:absolute;
+		left:130px;
+		top:5px;
+      }
+      #search .button {
+        padding: 10px;
+        width: 90px;
+		position:absolute;
+		left:180px;
+		top:33px;
+      }
+	  .hend{
+		  background:#d10e12;
+		  width:1348px;
+		  height:130px;
+		  z-index:80;
+		  position:absolute;
+		  left:0px;
+		  top:0px;
+		  
+		  }
+	.headImage{
+		z-index:-5;
+		position:absolute;
+		left:180px;
+		top:15px;
+		 
+		}
+		.QQ{
+			position:absolute;
+			top:35px;
+			left:870px;
+			
+			}
+		.qqimage{
+			position:absolute;
+			top:8px;
+		
+
+			}
+		.qqfont{
+			position:absolute;
+			top:10px;
+			left:30px;
+			width:70px;
+			color: #E3E3E3;
+			size:3px;
+			font-family:"方正北魏楷书简体";
+			z-index:10;
+			
+			}
+		.weibo{
+			position:absolute;
+			left:105px;
+			top:5px;
+			z-index:100;
+			}
+		.weibofont{
+			position:absolute;
+			top:10px;
+			left:140px;
+			width:70px;
+			color: #E3E3E3;
+			size:3px;
+			font-family:"方正北魏楷书简体";
+			}
+		.login{
+			position:absolute;
+			left:220px;
+			top:5px;
+			z-index:100;
+			}
+		.loginfont{
+			position:absolute;
+			top:10px;
+			left:250px;
+			width:70px;
+			color: #E3E3E3;
+			size:3px;
+			font-family:"方正北魏楷书简体";
+			}
+		.register{
+			position:absolute;
+			left:290px;
+			top:5px;
+			z-index:100;
+			}
+		.registerfont{
+			position:absolute;
+			top:10px;
+			left:315px;
+			width:70px;
+			color: #E3E3E3;
+			size:3px;
+			font-family:"方正北魏楷书简体";
+			}
+			.adminregister{
+			position:absolute;
+			left:355px;
+			top:5px;
+			z-index:100;
+			}
+		.adminregisterfont{
+			position:absolute;
+			top:10px;
+			left:378px;
+			width:90px;
+			color: #E3E3E3;
+			size:3px;
+			font-family:"方正北魏楷书简体";
+			}
+			.orderregister{
+			position:absolute;
+			left:310px;
+			top:5px;
+			z-index:100;
+			}
+		.orderfont{
+			position:absolute;
+			top:10px;
+			left:340px;
+			width:70px;
+			color: #E3E3E3;
+			size:3px;
+			font-family:"方正北魏楷书简体";
+			}
+  .cha{ font-size:16px;font-family:"微软雅黑"; position: absolute;left: 500px; top: 5px; width:80px; height:40px; background: url("/images/suosou.png");  }
+  .welcome{position:absolute;
+			top:45px;
+			left:225px;
+			width:300px;
+			color: #f5eded;
+			size:3px;
+			font-family:"方正北魏楷书简体";}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.luo.bean">
+    <class name="Employee" table="employee">
+       <id name="username" length="20"/>
+       <property name="password" length="20" not-null="true"/>
+      <property name="gender" not-null="true" length="5">
+        	<type name="org.hibernate.type.EnumType">
+        		<param name="enumClass">com.luo.bean.Gender</param>
+<!-- 12为java.sql.Types.VARCHAR常量值，即保存枚举的字面值到数据库。如果不指定type参数，保存枚举的索引值(从0开始)到数据库-->
+        		<param name="type">12</param>
+        	</type>
+        </property>
+    </class>
+</hibernate-mapping>

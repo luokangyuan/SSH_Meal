@@ -1,0 +1,4 @@
+#Sun May 15 09:54:13 CST 2016
+eclipse.preferences.version=1
+validator.Checked=WebRoot/js/jquery.min.js,WebRoot/fckeditor/editor/dialog/fck_tablecell.html,WebRoot/fckeditor/editor/dialog/fck_flash.html,WebRoot/fckeditor/editor/dialog/fck_link.html,WebRoot/fckeditor/editor/dialog/fck_table.html,WebRoot/fckeditor/editor/filemanager/browser/default/frmupload.html,WebRoot/fckeditor/editor/dialog/fck_image/fck_image_preview.html,WebRoot/fckeditor/editor/dialog/fck_image.html
+validator.Unchecked=

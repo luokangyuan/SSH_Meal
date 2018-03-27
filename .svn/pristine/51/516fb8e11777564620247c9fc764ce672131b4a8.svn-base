@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.luo.entity">
+    <class name="Mealseries" table="mealseries" catalog="ssh2_meal">
+       <id name="seriesId"  type="java.lang.Integer">
+       	<column name="SeriesId"></column>
+       	<generator class="native"></generator>
+       </id>
+       <property name="seriesName" type="java.lang.String">
+       <column name="SeriesName" length="20"></column>
+       </property>
+       
+       <set name="meals" inverse="true" lazy="false">
+       	<key>
+       		<column name="MealSeriesId"></column>
+       	</key>
+       	<one-to-many class="com.luo.entity.Meal"/>
+       </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+package com.luo.biz.impl;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.luo.biz.OrdersBiz;
+import com.luo.dao.OrdersDAO;
+@Service@Transactional
+public class OrdersBizImpl implements OrdersBiz {
+	@Resource OrdersDAO ordersDAO;
+     /**
+      * 获取指定用户的订单列表
+      */
+	@Override
+	public List getOrdersByUserId(int userId) {
+		// TODO Auto-generated method stub
+		return ordersDAO.getOrdersByUserId(userId);
+	}
+
+}

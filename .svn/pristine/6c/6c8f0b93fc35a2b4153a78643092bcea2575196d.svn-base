@@ -1,0 +1,14 @@
+package com.luo.dao;
+
+import java.util.List;
+
+/**
+ * 根据用户名查看订单
+ * @author Administrator
+ *
+ */
+public interface OrdersDAO {
+	//获取指定用户的订单列表
+	public List getOrdersByUserId(int userId);
+
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 默认的视图主题 -->
+    <constant name="struts.ui.theme" value="simple" />
+
+	 <constant name="struts.objectFactory" value="spring" />
+	
+	 <package name="employee" extends="struts-default">
+	 	<action name="list" class="employeeAction">
+	 		<result name="list1">/WEB-INF/page/employee.jsp</result>
+	 	</action>
+	 	
+	 </package>
+</struts>

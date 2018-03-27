@@ -1,0 +1,91 @@
+package com.luo.dao.impl;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.luo.dao.MealDAO;
+import com.luo.entity.Meal;
+@Repository@Transactional
+public class MealDAOImpl implements MealDAO {
+    @Resource SessionFactory factory;
+    /**
+     * 获取指定页的菜品列表
+     */
+	@Override
+	public List getAllMeal(int page) {
+		Criteria criteria = factory.getCurrentSession().createCriteria(Meal.class);
+		criteria.setFirstResult(6*(page-1));
+		criteria.setMaxResults(6);		
+		return criteria.list();
+	}
+    
+	/**
+	 * 统计所有菜品数量
+	 */
+	@Override
+	public Integer getCountofAllMeal() {
+		Integer count = null;
+		try {
+			Session session = factory.getCurrentSession();
+			String hql = "select count(s) from Meal s";
+			Query query = session.createQuery(hql);
+			count = Integer.parseInt(query.uniqueResult().toString());
+		} catch (HibernateException e) {			
+			e.printStackTrace();
+		} 
+		return count;
+		
+	/*	Criteria criteria = factory.getCurrentSession().createCriteria(Meal.class);
+		return criteria.list().size();*/
+	}
+    
+	/**
+	 * 根据查询条件，获取指定页显示的菜品列表
+	 */
+	@Override
+	public List getMealByCondition(Meal condition, int page) {
+		Criteria criteria = factory.getCurrentSession().createCriteria(Meal.class);
+		if(condition!=null){
+			if(condition.getMealName()!=null&&!condition.getMealName().equals("")){
+				//按菜品进行筛选
+				criteria.add(Restrictions.like("mealName", condition.getMealName(),MatchMode.ANYWHERE));
+			}
+			if((condition.getMealseries()!=null)&&(condition.getMealseries().getSeriesId()!=null)){
+				//按菜系进行筛选
+				criteria.add(Restrictions.eq("mealseries.seriesId", condition.getMealseries().getSeriesId()));
+			}
+		}
+		criteria.setFirstResult(6*(page-1));
+		criteria.setMaxResults(6);
+		return criteria.list();
+	}
+
+	@Override
+	public Integer getCountOfMeal(Meal condition) {
+		Criteria criteria = factory.getCurrentSession().createCriteria(Meal.class);
+		if(condition!=null){
+			if(condition.getMealName()!=null&&!condition.getMealName().equals("")){
+				//按菜品进行筛选
+				criteria.add(Restrictions.like("mealName", condition.getMealName(),MatchMode.ANYWHERE));
+			}
+			if((condition.getMealseries()!=null)&&(condition.getMealseries().getSeriesId()!=null)){
+				//按菜系进行筛选
+				criteria.add(Restrictions.eq("mealseries.seriesId", condition.getMealseries().getSeriesId()));
+			}
+		}
+		
+		return criteria.list().size();
+	}
+
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.luo.entity">
+    <class name="MealMofang" table="mealMofang" catalog="ssh2_meal">
+       <id name="id"  type="java.lang.Integer">
+       	<column name="id"></column>
+       	<generator class="native"></generator>
+       </id>
+       <property name="name" type="java.lang.String">
+       <column name="Name" length="200"></column>
+       </property>
+       <property name="picture" type="java.lang.String">
+       <column name="Picture" length="200"></column>
+       </property>
+       <property name="sumprice" type="java.lang.String">
+       <column name="Sumprice" length="800"></column>
+       </property>
+       <property name="pic1" type="java.lang.String">
+       <column name="Pic1" length="800"></column>
+       </property>
+       <property name="pic2" type="java.lang.String">
+       <column name="Pic2" length="800"></column>
+       </property>
+       <property name="pic3" type="java.lang.String">
+       <column name="Pic3" length="800"></column>
+       </property>
+       <property name="tit1" type="java.lang.String" >
+       <column name="Tit1" length="800"></column>
+       </property>
+       <property name="tit2" type="java.lang.String" >
+       <column name="Tit2" length="800"></column>
+       </property>
+       <property name="tit3" type="java.lang.String" >
+       <column name="Tit3" length="800"></column>
+       </property>
+       
+    </class>
+</hibernate-mapping>

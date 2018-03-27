@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.luo.entity">
+    <class name="HeadTitle" table="headTitle" catalog="ssh2_meal">
+       <id name="id"  type="java.lang.Integer">
+       	<column name="id"></column>
+       	<generator class="native"></generator>
+       </id>
+       <property name="name" type="java.lang.String">
+       <column name="Name" length="200"></column>
+       </property>
+       
+       <set name="feilei" inverse="true" lazy="false">
+       	<key>
+       		<column name="Tid"></column>
+       	</key>
+       	<one-to-many class="com.luo.entity.Feilei"/>
+       </set>
+    </class>
+</hibernate-mapping>

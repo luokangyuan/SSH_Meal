@@ -1,0 +1,24 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>菜品修改 页</title>
+  </head>  
+  <body>
+   <s:form action="doUpdateMeal" method="post" enctype="multipart/form-data">
+   	<table align="center">
+   		<s:hidden name="meal.mealId" value="%{#request.updateMeal.mealId}"></s:hidden>
+   		<s:textfield name="meal.mealName" value="%{#request.updateMeal.mealName}">菜名：</s:textfield><br>
+   		<s:select list="%{#request.mealSeriesList}" value="%{request.updateMeal.mealseries.seriesId}" 
+   		name="meal.mealseries.seriesId" listKey="seriesId" listValue="seriesName">菜系：</s:select><br>
+   	   <s:textfield name="meal.mealSummarize" value="%{#request.updateMeal.mealSummarize}">摘要：</s:textfield><br>
+   	   <s:textfield name="meal.mealDescription" value="%{#request.updateMeal.mealDescription}">介绍：</s:textfield><br>
+   	   <s:textfield name="meal.mealPrice" value="%{#request.updateMeal.mealPrice}">价格：</s:textfield><br>
+   	   <s:hidden name="meal.mealImage" value="%{request.updateMeal.mealImage}"></s:hidden>
+   	   <s:file name="doc">图片：</s:file><br/>
+   	   <s:submit value="确定"></s:submit>
+   	</table>
+   </s:form>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+package com.luo.biz;
+
+import java.util.List;
+
+import com.luo.entity.Orders;
+
+public interface OrdersBiz {
+	//根据用户id获取指定用户的订单
+	public List getOrdersByUserId(int userId);
+	//删除指定订单号的订单
+	public void deleteOrders(int oId);
+
+}

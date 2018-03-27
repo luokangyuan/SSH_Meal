@@ -1,0 +1,25 @@
+package com.luo.dao.impl;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.hibernate.Criteria;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
+
+import com.luo.dao.OrdersDAO;
+import com.luo.entity.Orders;
+@Repository
+public class OrdersDAOImpl implements OrdersDAO {
+	@Resource SessionFactory factory;
+    //获取指定用户的订单列表
+	@Override
+	public List getOrdersByUserId(int userId) {
+		Criteria criteria = factory.getCurrentSession().createCriteria(Orders.class);
+		criteria.add(Restrictions.eq("users.id", userId));
+		return criteria.list();
+	}
+
+}

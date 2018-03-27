@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0;padding:0;}	
+.menu{width:100%;height:80px;background:#ffffff; position:absolute; top:130px; z-index: 100}
+.menu .nav{width:960px;height:80px;margin:0 auto;}
+.menu .nav li{float:left;list-style:none; background:}
+.menu .nav li a{display:block;height:80px;padding:0 10px;line-height:20px;color:gray;text-decoration:none;position:relative;overflow:hidden;}
+.menu .nav li a:hover,.menu .nav li a.current{background:;color:red;}
+.menu .nav li .box{width:1166px;height:250px;position:absolute;top:80px;left:0;padding-left:200px;background:#fafafa;display:none;}
+.menu .nav li .box a{display:block;height:50px;float:left;color:#bda699;line-height:50px;border:none;background:none;}
+.menu .nav li .box.jiachang a{display:block;height:50px;float:left;color:#fff;line-height:50px;border:none;background:none;}
+.menu .nav li .box.zhonghua a{display:block;height:50px;float:left;color:#fff;line-height:50px;border:none;background:none;}
+.menu .nav li .box.zhonghua.xiaochi a{display:block;height:50px;float:left;color:#fff;line-height:50px;border:none;background:none;}
+.menu .nav li .box.zhonghua.waiguo a{display:block;height:50px;float:left;color:#fff;line-height:50px;border:none;background:none;}
+.menu .nav li .box.zhonghua.chufang a{display:block;height:50px;float:left;color:#fff;line-height:50px;border:none;background:none;}
+.menu .nav li .box.zhonghua.shicai a{display:block;height:50px;float:left;color:#fff;line-height:50px;border:none;background:none;}
+.menu .nav li .box.zhonghua.hong a{display:block;height:50px;float:left;color:#fff;line-height:50px;border:none;background:none;}
+.menu .nav li .box a:hover{text-decoration:underline;color:#46bd01}
+.jiachang{ position:absolute; left:200px; top:0px; width:1166px;}
+.zhonghua{ position:absolute; left:200px; top:50px; width:720px;}
+.xiaochi{position:absolute; left:800px; top:50px; width:700px;}
+.waiguo{position:absolute; left:200px; top:100px; width:700px;}
+.hong{position:absolute; left:800px; top:100px; width:700px;}
+.shicai{position:absolute; left:200px; top:150px; width:700px;}
+.chufang{position:absolute; left:800px; top:150px; width:700px;}

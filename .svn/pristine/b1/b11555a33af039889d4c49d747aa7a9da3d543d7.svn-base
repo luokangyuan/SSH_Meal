@@ -1,0 +1,9 @@
+package com.luo.dao;
+
+import com.luo.entity.Orderdts;
+
+public interface OrderDtsDAO {
+	//生成订单子表
+	public  void addOrderDts(Orderdts dts);
+
+}

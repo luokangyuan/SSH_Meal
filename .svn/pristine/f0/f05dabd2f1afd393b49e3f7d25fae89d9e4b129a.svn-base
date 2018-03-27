@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 默认的视图主题 -->
+    <constant name="struts.ui.theme" value="simple" />
+
+	 <constant name="struts.objectFactory" value="spring" />
+	
+	 <package name="employee" extends="struts-default">
+	<!--  配置拦截器 -->
+	<interceptors>
+		<interceptor name="loginCheck" class="com.luo.interceptor.MyInterceptor"></interceptor>
+	</interceptors>
+	 <!-- 设置全局的返回值,返回首页 -->         
+	    <global-results>             
+	    	<result name="login" type="redirectAction">/toShowMeal</result>         
+	    </global-results>
+	 	<action name="list" class="employeeAction">
+	 		<result name="list1">/WEB-INF/page/employee.jsp</result>
+	 	</action>
+	 	<action name="toShowMeal" class="mealAction" method="toShowMeal">
+	 		<result name="toShowMeal">/show.jsp</result>
+	 	</action>
+	 	<action name="validateLogin" class="userAction" method="validateLogin">
+	 		<result name="toShowMeal" type="redirectAction">toShowMeal</result>
+	 	</action>
+	 	<action name="addtoshopcart" class="cartAction" method="addtoshopcart">
+	 		<result name="shopCart">/shopCart.jsp</result>
+	 		<interceptor-ref name="loginCheck"></interceptor-ref>
+	 		<interceptor-ref name="defaultStack"></interceptor-ref>
+	 	</action>
+	 	<action name="updateSelectedQuantity" class="cartAction" method="updateQuantity">
+	 		<result name="shopCart">/shopCart.jsp</result>
+	 		<interceptor-ref name="loginCheck"></interceptor-ref>
+	 		<interceptor-ref name="defaultStack"></interceptor-ref>
+	 	</action>
+	 	<action name="deleteSelectedOrders" class="cartAction" method="deleteOrders">
+	 	 	<result name="shopCart" >/shopCart.jsp</result>
+	 	    <interceptor-ref name="loginCheck"></interceptor-ref>
+	 	    <interceptor-ref name="defaultStack"></interceptor-ref>
+	 	</action>
+	 	<action name="clearCart" class="cartAction" method="clearCart">
+	 		<result name="shopCart">/shopCart.jsp</result>
+	 		<interceptor-ref name="loginCheck"></interceptor-ref>
+	 	    <interceptor-ref name="defaultStack"></interceptor-ref>
+	 	</action>
+	 	<action name="addOrders" class="ordersAction" method="addOrders">
+	 		<result name="show" type="redirectAction" >toShowMeal</result>
+	 		<interceptor-ref name="loginCheck"></interceptor-ref>
+	 	<interceptor-ref name="defaultStack"></interceptor-ref>
+	 	</action>
+	 	<action name="toMyOrders" class="ordersAction" method="toShowOrders">	 	
+	 		<result name="myorders">/myorders.jsp</result>
+	 		<interceptor-ref name="loginCheck"></interceptor-ref>
+	 	    <interceptor-ref name="defaultStack"></interceptor-ref>
+	 	</action>
+	 	<action name="toOrdersDetaile" class="ordersAction" method="toOrdersDetails">
+	 		<result name="toOrdersDetails">/myordersdetails.jsp</result>
+	 		<interceptor-ref name="loginCheck"></interceptor-ref>
+	 	    <interceptor-ref name="defaultStack"></interceptor-ref>
+	 	</action>
+	 	<action name="deleteOrders" class="ordersAction" method="deleteOrders">
+	 		<result name="myorders" type="redirectAction">toMyOrders</result>
+	 		<interceptor-ref name="loginCheck"></interceptor-ref>
+	 	    <interceptor-ref name="defaultStack"></interceptor-ref>
+	 	</action>
+	 </package>
+</struts>

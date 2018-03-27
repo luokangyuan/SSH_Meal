@@ -1,0 +1,33 @@
+package com.luo.biz.impl;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.luo.biz.OrdersBiz;
+import com.luo.dao.OrdersDAO;
+import com.luo.entity.Orders;
+@Service@Transactional
+public class OrdersBizImpl implements OrdersBiz {
+	@Resource OrdersDAO ordersDAO;
+     /**
+      * 获取指定用户的订单列表
+      */
+	@Override
+	public List getOrdersByUserId(int userId) {
+		return ordersDAO.getOrdersByUserId(userId);
+	}
+	/**
+	 * 删除指定订单号的订单
+	 */
+	@Override
+	public void deleteOrders(int oId) {
+		Orders orders = ordersDAO.getOrdersByOid(oId);
+		ordersDAO.deleteOrders(orders);
+		
+	}
+
+}

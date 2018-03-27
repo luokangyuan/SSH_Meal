@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+.food{position:absolute; left:200px;}
+.food1{position:absolute; left:0px; width:900px;}
+.food2{ position:absolute; left:0px; top:26px; width:62px; color:#FF0000;}
+.food3{position:absolute; left:200px; top:40px;}
+.food4{position:absolute; left:200px; top:330px;}
+.food5{position:absolute; left:200px; top:380px;}
+.food6{position:absolute; left:0px; top:0px; width:80px; }
+.food7{position:absolute; left:120px; top:0px; width:140px;}
+.food8{position:absolute; left:120px; top:90px; width:140px;}
+.food9{position:absolute; left:500px; top:380px;}
+.food10{position:absolute; left:0px; top:0px; width:80px;}
+.food11{position:absolute; left:140px; top:0px; width:220px;}
+.food12{position:absolute; left:140px; top:90px; width:140px;}
+.food13{position:absolute; left:200px; top:510px;}
+.food14{position:absolute; left:200px; top:690px;}
+.food15{position:absolute; left:920px; top:690px;}
+.food16{position:absolute; left:920px; top:1040px;}

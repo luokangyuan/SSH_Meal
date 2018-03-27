@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/lanrenzhijia.css" rel="stylesheet" type="text/css"></link>
+</head>
+<body>
+
+<!-- 代码部分begin -->
+<div id="focusBar"> 
+	<a href="javascript:void(0)" class="arrL" onclick="prePage()"></a>
+	<a href="javascript:void(0)" class="arrR" onclick="nextPage()"></a>
+	<ul class="mypng">
+		<li id="focusIndex1" style="background:url(images/1.jpg) no-repeat center center; display:block;"><!--此处需判断li的display:block-->
+			<div class="focusL"><a href="#"><img src="images/11.png" width="90%" /></a></div>
+			<div class="zhezhao" ><a href="#"><img src="images/111.png"width="110%"  /></a></div>
+			<div class="focusR"><a href="#"><img src="images/1111.png"width="110%"  /></a></div>
+		</li>
+		<li id="focusIndex2" style="background:url(images/3.jpg) no-repeat center center; display:none;">
+			<div class="focusL"><a href="#"><img src="images/333.png"width="100%"  /></a></div>
+			<div class="zhezhao" ><a href="#"><img src="images/33.png"width="100%"  /></a></div>
+			<div class="focusR"><a href="#"><img src="images/111.png"width="110%" /></a></div>
+		</li>
+	   <li id="focusIndex3" style="background:url(images/4.jpg) no-repeat center center; display:none;">
+			<div class="focusL"><a href="#"><img src="images/44.png" width="110%"  /></a></div>
+			<div class="zhezhao" ><a href="#"><img src="images/111.png" width="110%" /></a></div>
+			<div class="focusR"><a href="#"><img src="images/.png" width="110%"  /></a></div>
+		</li>
+			<li id="focusIndex4" style="background:url(images/5.jpg) no-repeat center center; display:none;">
+			<div class="focusL"><a href="#"><img src="images/55.png"width="100%"  /></a></div>
+			<div class="zhezhao" ><a href="#"><img src="images/555.png"width="100%" /></a></div>
+			<div class="focusR"><a href="#"><img src="images/111.png"width="110%" /></a></div>
+		</li>
+        </li>
+			<li id="focusIndex5" style="background:url(images/6.jpg) no-repeat center center; display:none;">
+			<div class="focusL"><a href="#"><img src="images/66.png"width="100%"  /></a></div>
+			<div class="zhezhao" ><a href="#"><img src="images/666.png"width="100%" /></a></div>
+			<div class="focusR"><a href="#"><img src="images/111.png"width="110%" /></a></div>
+		</li>
+	</ul>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/lanrenzhijia.js"></script>
+<!-- 代码部分end -->
+
+</body>
+</html>

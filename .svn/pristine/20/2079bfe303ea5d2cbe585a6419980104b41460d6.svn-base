@@ -1,0 +1,108 @@
+package com.luo.action;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.apache.struts2.interceptor.RequestAware;
+import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.stereotype.Controller;
+
+import com.luo.biz.OrderDtsBiz;
+import com.luo.biz.OrdersBiz;
+import com.luo.entity.CartItemBean;
+import com.luo.entity.Orderdts;
+import com.luo.entity.Orders;
+import com.luo.entity.Users;
+import com.opensymphony.xwork2.ActionSupport;
+@Controller
+public class OrdersAction extends ActionSupport implements RequestAware,SessionAware {
+	@Resource OrderDtsBiz orderDtsBiz;
+	@Resource OrdersBiz ordersBiz;
+	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	String date = df.format(new Date());
+	int orderId ;
+	public int getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+	
+	Map<String, Object>session;
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+	Map<String, Object>request;
+	@Override
+	public void setRequest(Map<String, Object> request) {
+		this.request = request;
+	}
+	/**
+	 * 处理订单请求
+	 * @return
+	 * @throws Exception
+	 */
+	@SuppressWarnings("rawtypes")
+	public String addOrders()throws Exception{
+		Orders orders = new Orders();
+		orders.setOrderState("未处理");
+		orders.setOrderTime(date);		
+		Users users = (Users) session.get("user");
+		orders.setUsers(users);
+		orders.setOrderPrice((Double)session.get("sumPrice"));
+		Map cart = (Map) session.get("cart");
+		Iterator iter = cart.keySet().iterator();
+		while(iter.hasNext()){
+			Object key = iter.next();
+			CartItemBean cartItem = (CartItemBean) cart.get(key);
+			Orderdts orderdts = new Orderdts();
+			orderdts.setMeal(cartItem.getMeal());
+			orderdts.setMealCount(cartItem.getQuantity());
+			orderdts.setMealPrice(cartItem.getMeal().getMealPrice());
+			orderdts.setOrders(orders);
+			orderDtsBiz.addOrderDts(orderdts);
+		}
+		session.remove("cart");
+		return "show";
+	}
+	/**
+	 * 获取指定用户的订单，再转到我的订单页面
+	 * @return
+	 * @throws Exception
+	 */
+	@SuppressWarnings("rawtypes")
+	public String toShowOrders()throws Exception{
+		Users users = (Users) session.get("user");
+		List myOrdersList = ordersBiz.getOrdersByUserId(users.getId());
+		request.put("myOrdersList", myOrdersList);
+		return "myorders";
+	}
+	/**
+	 * 根据订单主编号获取 订单的详细信息
+	 * @return
+	 * @throws Exception
+	 */
+	@SuppressWarnings("rawtypes")
+	public String toOrdersDetails()throws Exception{
+		List ordersDtsList = orderDtsBiz.getOrderDtsByOid(orderId);
+		request.put("ordersDtsList", ordersDtsList);
+		return "toOrdersDetails";
+	}
+	/**
+	 * 删除订单
+	 * @return
+	 * @throws Exception
+	 */
+	public String deleteOrders()throws Exception{
+		ordersBiz.deleteOrders(orderId);
+		return "myorders";
+	}
+	
+
+}

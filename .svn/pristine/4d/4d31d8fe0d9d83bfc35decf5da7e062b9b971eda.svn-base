@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.luo.entity">
+
+    <class name="Characteristic" table="characteristic" catalog="ssh2_meal">
+       <id name="id"  type="java.lang.Integer">
+       	<column name="id"></column>
+       	<generator class="native"></generator>
+       </id>
+       
+       
+       <property name="seriesname" type="java.lang.String">
+       <column name="Seriesname" length="200"></column>
+       </property>
+       <property name="name" type="java.lang.String">
+       <column name="Name" length="400"></column>
+       </property>
+       <property name="rawMaterial" type="java.lang.String">
+       <column name="RawMaterial" length="600"></column>
+       </property>
+       <property name="picture" type="java.lang.String" >
+       <column name="Picture" length="200"></column>
+       </property>
+       
+    </class>
+</hibernate-mapping>

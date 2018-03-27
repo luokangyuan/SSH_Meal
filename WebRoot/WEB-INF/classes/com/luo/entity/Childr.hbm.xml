@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.luo.entity">
+
+    <class name="Childr" table="childr" catalog="ssh2_meal">
+       <id name="id"  type="java.lang.Integer">
+       	<column name="id"></column>
+       	<generator class="native"></generator>
+       </id>
+       <property name="name" type="java.lang.String">
+       <column name="Name" length="200"></column>
+       </property>
+       <property name="picture" type="java.lang.String">
+       <column name="Picture" length="200"></column>
+       </property>
+       <property name="sumprice" type="java.lang.String">
+       <column name="Sumprice" length="800"></column>
+       </property>
+       <property name="menu" type="java.lang.String">
+       <column name="Menu" length="800"></column>
+       </property>
+       <property name="fumenu" type="java.lang.String" >
+       <column name="Fumenu" length="800"></column>
+       </property>
+       <property name="chuju" type="java.lang.String" >
+       <column name="Chuju" length="800"></column>
+       </property>
+       <property name="teppicture1" type="java.lang.String" >
+       <column name="Teppicture1" length="800"></column>
+       </property>
+       <property name="tepfont1" type="java.lang.String" >
+       <column name="Tepfont1" length="800"></column>
+       </property>
+    </class>
+</hibernate-mapping>

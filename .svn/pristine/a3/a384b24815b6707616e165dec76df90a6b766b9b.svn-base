@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.luo.entity">
+    <class name="Meal" table="meal" catalog="ssh2_meal">
+       <id name="mealId"  type="java.lang.Integer">
+       	<column name="MealId"></column>
+       	<generator class="native"></generator>
+       </id>
+       <many-to-one name="mealseries" class="com.luo.entity.Mealseries" fetch="select" lazy="false">
+       	<column name="MealSeriesId"></column>
+       </many-to-one>
+       
+       <property name="mealName" type="java.lang.String">
+       <column name="MealName" length="20"></column>
+       </property>
+       <property name="mealSummarize" type="java.lang.String">
+       <column name="MealSummarize" length="40"></column>
+       </property>
+       <property name="mealDescription" type="java.lang.String">
+       <column name="MealDescription" length="40"></column>
+       </property>
+       <property name="mealPrice" type="java.lang.Double">
+       <column name="MealPrice" length="20"></column>
+       </property>
+       <property name="mealImage" type="java.lang.String">
+       <column name="MealImage" length="40"></column>
+       </property>
+       <set name="orderdtses" inverse="true" lazy="false" cascade="delete">
+       	<key>
+       		<column name="MealId"></column>
+       	</key>
+       	<one-to-many class="com.luo.entity.Orderdts"/>
+       </set>
+    </class>
+</hibernate-mapping>

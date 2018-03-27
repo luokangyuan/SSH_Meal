@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="SSH_Meal"
+  id="myeclipse.1456044822263"
+  context-root="/SSH_Meal"
+  j2ee-spec="6.0"
+  archive="SSH_Meal.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

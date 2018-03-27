@@ -1,0 +1,28 @@
+
+
+img{border:none;vertical-align:middle;}
+
+
+ul,ol{list-style-type:none;}
+
+button{border:none;cursor:pointer;font-size:12px;background-color:transparent;}
+a:link,a:visited{text-decoration:none;color:#666666;}
+a:hover,a:active{text-decoration:underline;color:#6699ff;}
+.texth3{ color:#6699ff; font-size:18px; font-weight:normal;font-family:"Î¢ÈíÑÅºÚ"; }
+.texth2{display:block; float:left; font-size:18px; color:#333; }
+.texth1{ color:#ff6600; font-size:30px; font-weight:normal;font-family:"Î¢ÈíÑÅºÚ"; }
+/*È«¾ÖÑùÊ½½áÊø*/
+
+.biaoti{float: left;}
+#flo{float: left; clear: left;}
+#side_left_menu{width:130px; height:600px;  position:absolute; top:2500px; left:200px;z-index: 100;  }
+#side_left_menu .side_list{width:100%;height:auto; }
+#side_left_menu .side_list li{  width:150px; text-align:center;margin:0 auto;height:60px;margin-bottom:10px;box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);-webkit-transition:0.3s all ease;-moz-transition:0.3s all ease;-ms-transition:0.3s all ease;-o-transition:0.3s all ease;transition:0.3s all ease;overflow:hidden;position:relative; border-right:5px solid orange; }
+#side_left_menu .side_list li:hover{background:#009999;box-shadow:2px 2px 4px rgba(0, 0, 0, 0.4);border-right:5px solid #fff;}
+#side_left_menu .side_text h2,#side_left_menu .side_text a{  font-family:"Microsoft YaHei";color:#333;text-shadow:1px 2px 4px #999;font-size:24px;font-weight:normal;-webkit-transition:0.3s all ease;-moz-transition:0.3s all ease;-ms-transition:0.3s all ease;-o-transition:0.3s all ease; line-height: 55px; padding: 0px; margin: 0px; text-align: center; float:l}
+#side_left_menu .side_text h3{font-family:Verdana;font-size:14px;color:#666;font-weight:normal;-webkit-transition:0.3s all ease;-moz-transition:0.3s all ease;-ms-transition:0.3s all ease;-o-transition:0.3s all ease;}
+#side_left_menu .side_list li:hover h2,#side_left_menu .side_list li:hover  a{ #FFF;font-size:18px;text-shadow:1px 2px 4px #333;}
+#side_left_menu .side_list li:hover .side_text h3{color:#F60;font-size:18px;}
+#side_left_menu .side_list li:hover .icon{color:#F90;font-size:50px;}
+#side_left_menu .side_list li:hover .side_text{-webkit-animation-name:shake;-moz-animation-name:shake;}
+#side_left_menu .side_text{width:125px;height:auto;float:left;height:50px;-webkit-animation:.5s .2s ease both;-moz-animation:1s .2s ease both;}

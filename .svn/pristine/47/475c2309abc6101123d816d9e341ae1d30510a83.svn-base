@@ -1,0 +1,57 @@
+package com.luo.action;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.apache.struts2.interceptor.RequestAware;
+import org.springframework.stereotype.Controller;
+
+import com.luo.biz.MealBiz;
+import com.luo.biz.MealSeriesBiz;
+import com.luo.entity.Meal;
+import com.luo.entity.Pager;
+import com.opensymphony.xwork2.ActionSupport;
+
+@Controller
+public class MealAction extends ActionSupport implements RequestAware {
+	@Resource MealBiz mealBiz;
+	@Resource MealSeriesBiz mealSeriesBiz;
+	//定义meal类型属性，用于封装表单参数
+	private Meal meal;
+	public Meal getMeal() {
+		return meal;
+	}
+	public void setMeal(Meal meal) {
+		this.meal = meal;
+	}
+	//分页实体类
+    private	Pager pager ;
+    public Pager getPager() {
+		return pager;
+	}
+	public void setPager(Pager pager) {
+		this.pager = pager;
+	}
+	
+    Map<String, Object>request;
+	@Override
+	public void setRequest(Map<String, Object> request) {
+		this .request = request;
+	}
+    //获取指定页码，符合查询条件的菜品列表，再转到菜品显示页show.jsp
+	public String toshowmeal()throws Exception{
+		int curPage = 1;
+		if(pager!=null)
+			curPage = pager.getCurPage();
+		List mealList = null;
+		if(meal!=null){//meal不为空，表示表单中输入了查询条件
+			//此时获取符合查询条件的，指定页码的菜品列表
+			mealList = mealBiz.getMealByCondition(meal, curPage);
+			//统计符合查询条件的菜品数量，初始化分页类，设置其每页显示数，和总数
+			pager = mealBiz.getPagerOfMeal(meal);
+		}
+		return null;
+	}
+}

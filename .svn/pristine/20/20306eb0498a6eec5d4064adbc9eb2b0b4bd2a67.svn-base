@@ -1,0 +1,9 @@
+package com.luo.biz;
+
+import com.luo.entity.Orderdts;
+
+public interface OrderDtsBiz {
+	//生成订单子表
+	public void addOrderDts(Orderdts dts);
+
+}

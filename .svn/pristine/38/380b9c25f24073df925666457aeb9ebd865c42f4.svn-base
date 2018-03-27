@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.luo.entity">
+    <class name="Orders" table="orders" catalog="ssh2_meal">
+       <id name="oId"  type="java.lang.Integer">
+       	<column name="OID"></column>
+       	<generator class="native"></generator>
+       </id>
+       <many-to-one name="users" class="com.luo.entity.Users" fetch="select" lazy="false">
+       	<column name="UserId"></column>
+       </many-to-one>
+       
+       <property name="orderTime" type="java.lang.String">
+       <column name="OrderTime" length="20"></column>
+       </property>
+       <property name="orderState" type="java.lang.String">
+       <column name="OrderState" length="40"></column>
+       </property>
+       <property name="orderPrice" type="java.lang.Double">
+       <column name="OrderPrice" length="40"></column>
+       </property>
+       <set name="orderdtses" inverse="true" lazy="false" cascade="all">
+       	<key>
+       		<column name="OID"></column>
+       	</key>
+       	<one-to-many class="com.luo.entity.Orderdts"/>
+       </set>
+    </class>
+</hibernate-mapping>

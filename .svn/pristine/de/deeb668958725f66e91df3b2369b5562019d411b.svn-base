@@ -1,0 +1,51 @@
+﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+<link href="css/main.css" type="text/css" rel="stylesheet" media="screen"  />
+</head>
+<body>
+<!---------------------------------------------------------头部部分-------------------------------------------------------------------->
+<div class="hend">
+<div class="container">
+  <div id="search">
+   <input type="text" name="sousuo">
+    <input class="button" type="submit" value="search">
+  </div>
+</div>
+<div class="headImage">
+	<img src="image/logo2.png" width="219"  height="76"/>
+</div>
+<div class="QQ">
+	<div class="qqimage">
+	<img  src="image/QQ.png"  width="25" height="25" />
+    </div>
+    <div class="qqfont">
+   <a href="#"> <font color="#f5eded">QQ登陆</font></a>
+    </div>
+    <div class="weibo">
+    <img src="image/weibo.png" width="25" height="25"  />
+    </div>
+     <div class="weibofont">
+   <a href="#"> <font color="#f5eded">微博登陆</font></a>
+    </div>
+    <div class="login">
+    <img  src="image/login.png" width="25" height="25"  />
+    </div>
+     <div class="loginfont">
+   <a href="#"> <font color="#f5eded">登陆</font></a>
+    </div>
+     <div class="register">
+    <img  src="image/register.png" width="25" height="25"  />
+    </div>
+     <div class="registerfont">
+   <a href="#"> <font color="#f5eded">注册</font></a>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

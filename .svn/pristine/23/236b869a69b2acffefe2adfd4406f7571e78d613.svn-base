@@ -1,0 +1,21 @@
+package com.luo.test;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
+public class Testmathod {
+    public static void main(String[] args) throws ParseException {
+    	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date date = new Date();
+		//Date类型转为String类型
+		String date2 = df.format(date);
+		//将String类型转为Date类型
+		Date date3 = df.parse(date2);
+		System.out.println(date3);
+		System.out.println(date2);
+		System.out.println(date);
+		System.out.println(df.format(new Date()));
+	}
+}

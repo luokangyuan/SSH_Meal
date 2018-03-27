@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.luo.entity">
+    <class name="Users" table="users" catalog="ssh2_meal">
+       <id name="id"  type="java.lang.Integer">
+       	<column name="Id"></column>
+       	<generator class="native"></generator>
+       </id>
+       <property name="loginName" type="java.lang.String">
+       <column name="LoginName" length="20"></column>
+       </property>
+       <property name="loginPwd" type="java.lang.String">
+       <column name="LoginPwd" length="20"></column>
+       </property>
+       <property name="trueName" type="java.lang.String">
+       <column name="TrueName" length="20"></column>
+       </property>
+       <property name="eamil" type="java.lang.String">
+       <column name="Eamil" length="40"></column>
+       </property>
+       <property name="phone" type="java.lang.String">
+       <column name="Phone" length="20"></column>
+       </property>
+       <property name="qqnumber" type="java.lang.String">
+       <column name="QQnumber" length="40"></column>
+       </property>
+       <property name="weibonumber" type="java.lang.String">
+       <column name="Weibonumber" length="40"></column>
+       </property>
+       <property name="qqpws" type="java.lang.String">
+       <column name="QQpws" length="40"></column>
+       </property>
+       <property name="weibopws" type="java.lang.String">
+       <column name="Weibopws" length="40"></column>
+       </property>
+       <property name="address" type="java.lang.String">
+       <column name="Address" length="200"></column>
+       </property>
+       <property name="address1" type="java.lang.String">
+       <column name="Address1" length="200"></column>
+       </property>
+       <property name="address2" type="java.lang.String">
+       <column name="Address2" length="200"></column>
+       </property>
+       <property name="address3" type="java.lang.String">
+       <column name="Address3" length="200"></column>
+       </property>
+       <property name="address4" type="java.lang.String">
+       <column name="Address4" length="200"></column>
+       </property>
+       <set name="orderses" inverse="true" lazy="false">
+       	<key>
+       		<column name="UserId"></column>
+       	</key>
+       	<one-to-many class="com.luo.entity.Orders"/>
+       </set>
+    </class>
+</hibernate-mapping>
